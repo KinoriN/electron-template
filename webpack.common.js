@@ -32,7 +32,13 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        "presets": ["@babel/preset-env", "@babel/preset-react"]
+                        presets: ["@babel/preset-env", "@babel/preset-react"],
+                        plugins:
+                            [['import',{
+                                libraryName: "antd",
+                                libraryDirectory: 'es',
+                                style: 'css'
+                        }]]
                     }
                 }
             }
@@ -43,12 +49,12 @@ module.exports = {
         new HtmlWebPackPlugin({
             filename: "App/index.html",
             template: "./src/App/public/index.html",
-            thunks:['App']
+            chunks: ['App']
         }),
         new HtmlWebPackPlugin({
             filename: "App2/index.html",
             template: "./src/App2/public/index.html",
-            thunks:['App2']
+            chunks: ['App2']
         }),
 
     ]

@@ -1,12 +1,14 @@
 {
+  "development": true,
   "name": "webpack-demo",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "electron-start": "electron .",
+    "dist": "electron-builder"
   },
   "author": "",
   "license": "ISC",
@@ -14,21 +16,35 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "antd": "^3.21.4",
     "babel-loader": "^8.0.0-beta.0",
-    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-plugin-import": "^1.12.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "electron": "^6.0.2",
+    "electron-builder": "^21.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "style-loader": "^1.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "uuid": "^3.3.2",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "electron": "^6.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+  },
+  "build": {
+    "productName":"xxxx",
+    "appId": "com.xxx.xxxxx",
+    "copyright":"xxxx",
+    "directories": {
+      "output": "build"
+    },
+    "win": {
+      "icon": "xxx/icon.ico"
+    }
+  }
 }
